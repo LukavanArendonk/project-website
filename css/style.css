@@ -1,0 +1,89 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  color: #2d3748;
+}
+
+header { text-align: center; color: #fff; margin-bottom: 1.5rem; }
+header h1 { font-size: 2rem; margin-bottom: .5rem; }
+#klok { opacity: .85; font-variant-numeric: tabular-nums; }
+
+main {
+  background: #fff;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .2);
+}
+
+#taak-form { display: flex; gap: .5rem; }
+
+#taak-input {
+  flex: 1;
+  padding: .75rem 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color .2s;
+}
+#taak-input:focus { border-color: #667eea; }
+
+button {
+  padding: .75rem 1.25rem;
+  border: none;
+  border-radius: 10px;
+  background: #667eea;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s, transform .1s;
+}
+button:hover { background: #5a67d8; }
+button:active { transform: scale(.97); }
+
+#takenlijst { list-style: none; margin-top: 1.25rem; }
+
+#takenlijst li {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .75rem;
+  border-radius: 10px;
+  margin-bottom: .5rem;
+  background: #f7fafc;
+  animation: binnenkomen .25s ease;
+}
+
+@keyframes binnenkomen {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+#takenlijst li span { flex: 1; }
+#takenlijst li.klaar span { text-decoration: line-through; opacity: .5; }
+
+#takenlijst li button {
+  padding: .35rem .6rem;
+  font-size: .85rem;
+  background: #fc8181;
+}
+#takenlijst li button:hover { background: #f56565; }
+
+#leeg-melding {
+  text-align: center;
+  color: #a0aec0;
+  margin-top: 1.25rem;
+  font-size: .95rem;
+}
+
+footer { margin-top: 2rem; color: #fff; opacity: .7; font-size: .85rem; }
